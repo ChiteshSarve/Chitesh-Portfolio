@@ -9,26 +9,35 @@ const Contact = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
+    // Access the API key from the environment variable
     const accessKey = process.env.REACT_APP_ACCESS_KEY;
     formData.append("access_key", accessKey);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: json
-    }).then((res) => res.json());
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
 
-    if (res.success) {
-      setSubmitSuccess(true);
-      setSubmitError(false);
-      event.target.reset();
-    } else {
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitSuccess(true);
+        setSubmitError(false);
+        event.target.reset();
+      } else {
+        setSubmitSuccess(false);
+        setSubmitError(true);
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
       setSubmitSuccess(false);
       setSubmitError(true);
     }
@@ -50,7 +59,10 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="text-pink-500 mr-3" size={20} />
-                  <a href="mailto:chitesh2024@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">
+                  <a
+                    href="mailto:chitesh2024@gmail.com"
+                    className="text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
+                  >
                     chitesh2024@gmail.com
                   </a>
                 </div>
@@ -63,13 +75,22 @@ const Contact = () => {
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold mb-6 dark:text-white">Social Links</h3>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/ChiteshSarve" className="text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">
+                  <a
+                    href="https://github.com/ChiteshSarve"
+                    className="text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
+                  >
                     <Github size={24} />
                   </a>
-                  <a href="https://linkedin.com/in/chiteshsarve" className="text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">
+                  <a
+                    href="https://linkedin.com/in/chiteshsarve"
+                    className="text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
+                  >
                     <Linkedin size={24} />
                   </a>
-                  <a href="https://www.instagram.com/chiteshsarve" className="text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">
+                  <a
+                    href="https://www.instagram.com/chiteshsarve"
+                    className="text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
+                  >
                     <Instagram size={24} />
                   </a>
                 </div>
@@ -80,7 +101,10 @@ const Contact = () => {
             <div>
               <form onSubmit={onSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >
                     Name
                   </label>
                   <input
@@ -91,7 +115,10 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >
                     Email
                   </label>
                   <input
@@ -102,7 +129,10 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >
                     Message
                   </label>
                   <textarea
@@ -122,10 +152,14 @@ const Contact = () => {
 
               {/* Success/Error Message */}
               {submitSuccess && (
-                <div className="mt-4 text-green-500 font-semibold">Great! Your message has been successfully submitted. We'll get back to you as soon as possible.</div>
+                <div className="mt-4 text-green-500 font-semibold">
+                  Great! Your message has been successfully submitted. We'll get back to you as soon as possible.
+                </div>
               )}
               {submitError && (
-                <div className="mt-4 text-red-500 font-semibold">There was an error sending your message. Please try again later.</div>
+                <div className="mt-4 text-red-500 font-semibold">
+                  There was an error sending your message. Please try again later.
+                </div>
               )}
             </div>
           </div>
