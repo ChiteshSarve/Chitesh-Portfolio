@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, ExternalLink, CheckCircle } from 'lucide-react';
 
-// Importing certificate PDFs from the assets folder
+
 import googleCloudCert from '../assets/google-cloud-certification.pdf';
 import cppCert from '../assets/cpp-certification.png';
 import javaCert from '../assets/java-bootcamp-certification.pdf';
