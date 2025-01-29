@@ -21,7 +21,7 @@ const educationData = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <section id="education" className="py-20 bg-gradient-to-br from-green-50 to-blue-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 dark:text-white">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
@@ -33,11 +33,11 @@ const Education = () => {
             <GraduationCap className="text-blue-500 mr-3" size={32} />
             <h3 className="text-2xl font-semibold dark:text-white">Academic Journey</h3>
           </div>
-          <div className="space-y-8">
+          <div className="space-y-10">
             {educationData.map((edu, index) => (
               <div 
                 key={index} 
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
+                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
               >
                 <div className="flex items-start">
                   <School className="text-teal-500 mr-4 mt-1" size={24} />
@@ -60,4 +60,3 @@ const Education = () => {
 };
 
 export default Education;
-

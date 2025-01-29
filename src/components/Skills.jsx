@@ -21,7 +21,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="skills" className="py-20 bg-gradient-to-br from-green-50 to-blue-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 dark:text-white">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-red-500">
@@ -31,7 +31,10 @@ const Skills = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {skillCategories.map((category, index) => (
-              <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
                 <div className="flex items-center mb-4">
                   {category.icon}
                   <h3 className="text-xl font-semibold ml-2 dark:text-white">{category.title}</h3>
@@ -56,4 +59,3 @@ const Skills = () => {
 };
 
 export default Skills;
-

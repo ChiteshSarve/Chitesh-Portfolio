@@ -95,12 +95,16 @@ const SocialLinks = () => (
   <div className="flex items-center space-x-4">
     <a
       href="https://github.com/ChiteshSarve"
+      target="_blank"
+      rel="noopener noreferrer"
       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
     >
       <Github size={20} />
     </a>
     <a
-      href="https://github.com/ChiteshSarve"
+      href="https://linkedin.com/in/chiteshsarve"
+      target="_blank"
+      rel="noopener noreferrer"
       className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
     >
       <Linkedin size={20} />

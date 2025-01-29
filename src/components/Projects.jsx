@@ -43,7 +43,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
+    <section id="projects" className="py-20 bg-gradient-to-br from-green-50 to-blue-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 dark:text-white">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
@@ -65,7 +65,7 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold mb-2 dark:text-white">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -81,7 +81,7 @@ const Projects = () => {
                 <div className="flex space-x-4">
                   <a
                     href={project.github}
-                    className="flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                   >
                     <Github size={20} className="mr-2" />
                     Code
@@ -89,7 +89,7 @@ const Projects = () => {
                   {project.demo && (
                     <a
                       href={project.demo}
-                      className="flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                     >
                       <ExternalLink size={20} className="mr-2" />
                       Demo
