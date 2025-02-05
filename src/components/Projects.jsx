@@ -13,8 +13,8 @@ const projects = [
     description: 'A dynamic portfolio website built using React to showcase Skills, Projects, Experience, Education and Certifications. Features responsive design and modular components for seamless navigation and user engagement.Implements a theme toggle for enhanced user experience and personalization.',
     image: PortfolioImage,
     technologies: ['React', 'Tailwind CSS', 'JavaScript'],
-    github: '',
-    demo: ''
+    github: 'https://github.com/ChiteshSarve/Chitesh-Portfolio.git',
+    demo: 'https://chitesh-sarve-portfolio.netlify.app/'
   },
   {
     title: 'HandSolve AI',
