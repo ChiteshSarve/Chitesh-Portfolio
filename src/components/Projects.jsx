@@ -1,7 +1,6 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 
-// Import project images from the img folder
 import PortfolioImage from '../img/Portfolio.png';
 import handSolveAIImage from '../img/Handsolve.jpg';
 import noteKeeperImage from '../img/NoteKeeper.jpg';
@@ -81,6 +80,8 @@ const Projects = () => {
                 <div className="flex space-x-4">
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                   >
                     <Github size={20} className="mr-2" />
@@ -89,6 +90,8 @@ const Projects = () => {
                   {project.demo && (
                     <a
                       href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                     >
                       <ExternalLink size={20} className="mr-2" />
